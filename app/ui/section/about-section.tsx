@@ -81,7 +81,7 @@ export default async function AboutSection({ locale }: Props) {
                   .filter((item) => item !== null)
                   .map((item) => (
                     <ViewAnimation
-                      key={`${item.labelPrefix}${item.labelSuffix}`}
+                      key={item.labelSuffix}
                       delay={0.2}
                     >
                       <ExperienceCounter content={item} />

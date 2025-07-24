@@ -10,6 +10,12 @@ import {
 import { useEffect, useRef } from 'react';
 import { getYearsSince } from '@/app/lib/date-utils';
 
+type Metric = {
+  startYear?: number;
+  labelPrefix?: string;
+  labelSuffix?: string;
+};
+
 type Props = {
   content?: Metric;
 };

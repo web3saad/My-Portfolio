@@ -33,14 +33,14 @@ export default function TestimonialSlider({ content }: Props) {
     <>
       <div className="mb-7 flex items-center justify-between space-x-2">
         <h6 className="text-(--highlight) uppercase tracking-wider">
-          {content?.title}
+          Testimonials
         </h6>
         <div className="flex space-x-2">
           <button
             type="button"
             onClick={scrollPrev}
             className="hover-effect base-border rounded-full p-1.5 backdrop-blur-sm"
-            aria-label={content?.prevSlideLabel || undefined}
+            aria-label="Previous slide"
           >
             <ArrowLeft01Icon
               className="relative right-0.5 text-(--secondary)"
@@ -51,7 +51,7 @@ export default function TestimonialSlider({ content }: Props) {
             type="button"
             onClick={scrollNext}
             className="hover-effect base-border rounded-full p-1.5 backdrop-blur-sm"
-            aria-label={content?.nextSlideLabel || undefined}
+            aria-label="Next slide"
           >
             <ArrowRight01Icon
               className="relative left-0.5 text-(--secondary)"

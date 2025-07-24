@@ -5,6 +5,16 @@ import SubmitButton from '@/app/ui/button/submit-button';
 import FormText from '@/app/ui/form/input/form-text';
 import FormTextarea from '@/app/ui/form/input/form-textarea';
 
+type Form = {
+  labels?: {
+    name?: string;
+    email?: string;
+    projectDetails?: string;
+  };
+  validationMessages?: { [key: string]: string };
+  sendButtonLabel?: string;
+};
+
 type Props = {
   content?: Form;
   state: SaveMessageStatus;
@@ -27,7 +37,7 @@ export default function ContactFormFields({
         register={register}
         name="name"
         label={content?.labels?.name || ''}
-        defaultValue={state?.rawData?.name || ''}
+        defaultValue={''}
         errors={errors}
         validationMessages={content?.validationMessages}
       />
@@ -36,7 +46,7 @@ export default function ContactFormFields({
         register={register}
         name="email"
         label={content?.labels?.email || ''}
-        defaultValue={state?.rawData?.email}
+        defaultValue={''}
         errors={errors}
         validationMessages={content?.validationMessages}
       />
@@ -45,7 +55,7 @@ export default function ContactFormFields({
         register={register}
         name="projectDetails"
         label={content?.labels?.projectDetails || ''}
-        defaultValue={state?.rawData?.projectDetails}
+        defaultValue={''}
         errors={errors}
         validationMessages={content?.validationMessages}
       />

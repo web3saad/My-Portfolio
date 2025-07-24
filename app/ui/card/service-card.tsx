@@ -15,6 +15,8 @@ type Service = {
   title: string;
   description: string;
   icon?: string;
+  iconName?: string;
+  tags?: string[];
   images?: string[];
 };
 

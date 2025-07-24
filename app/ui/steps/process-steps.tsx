@@ -4,6 +4,11 @@ import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import ProcessStepItem from '@/app/ui/steps/process-step-item';
 
+type ProcessStep = {
+  title: string;
+  description: string;
+};
+
 type Props = {
   content: ProcessStep[];
 };

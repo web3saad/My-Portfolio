@@ -3,6 +3,18 @@ import ImplicitButton from '@/app/ui/button/implicit-button';
 import StatusCard from '@/app/ui/card/status-card';
 import MailLink from '@/app/ui/link/mail-link';
 
+type Form = {
+  errorTitle?: string;
+  errorButtonLabel?: string;
+  attemptsLabel?: string;
+  attemptLabel?: string;
+  errorIntro?: string;
+  errorEditAriaLabel?: string;
+  errorEditPrompt?: string;
+  errorDescription?: string;
+  errorContactEmail?: string;
+};
+
 type Props = {
   content?: Form;
   handleReturn: () => void;

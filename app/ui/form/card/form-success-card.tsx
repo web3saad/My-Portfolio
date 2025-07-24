@@ -2,6 +2,16 @@ import { MailOpenIcon } from 'hugeicons-react';
 import ImplicitButton from '@/app/ui/button/implicit-button';
 import StatusCard from '@/app/ui/card/status-card';
 
+type Form = {
+  emailVerificationTitle?: string;
+  emailResendButtonLabel?: string;
+  attemptsLabel?: string;
+  attemptLabel?: string;
+  emailVerificationDescription?: string;
+  emailEditAriaLabel?: string;
+  emailEditPrompt?: string;
+};
+
 type Props = {
   content?: Form;
   pending: boolean;

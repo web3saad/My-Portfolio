@@ -11,6 +11,16 @@ import SubmittedStatusCard from '@/app/ui/form/card/form-success-card';
 import ContactFormFields from '@/app/ui/form/contact-form-fields';
 import LoadingSpinner from '@/app/ui/loading/loading-spinner';
 
+type Form = {
+  labels?: {
+    name?: string;
+    email?: string;
+    projectDetails?: string;
+  };
+  validationMessages?: { [key: string]: string };
+  sendButtonLabel?: string;
+};
+
 type Props = {
   content?: Form;
 };
@@ -59,7 +69,7 @@ export default function ContactForm({ content }: Props) {
       >
         <ContactFormFields
           content={content}
-          submitted={submitted}
+          state={null}
           handleFormAction={handleFormAction}
           errors={errors}
           register={register}

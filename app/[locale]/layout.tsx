@@ -14,12 +14,6 @@ type Props = {
   params: Promise<{ locale: Locale }>;
 };
 
-if (process.env.NEXT_RUNTIME === 'nodejs' && process.env.MOCKS_ENABLED) {
-  import('@/mocks/node').then(({ server }) =>
-    server.listen({ onUnhandledRequest: 'error' }),
-  );
-}
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
