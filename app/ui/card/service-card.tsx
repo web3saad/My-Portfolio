@@ -10,6 +10,14 @@ import {
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
+// Add a local Service type definition to replace the removed import
+type Service = {
+  title: string;
+  description: string;
+  icon?: string;
+  images?: string[];
+};
+
 type Props = {
   content?: Service;
 };
