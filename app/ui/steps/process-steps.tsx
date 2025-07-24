@@ -2,7 +2,6 @@
 
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
-import type { ProcessStep } from '@/app/lib/contentful/generated/sdk';
 import ProcessStepItem from '@/app/ui/steps/process-step-item';
 
 type Props = {

@@ -1,13 +1,17 @@
 import { QuoteDownIcon } from 'hugeicons-react';
 import Image from 'next/image';
-import type { Testimonial } from '@/app/lib/contentful/generated/sdk';
 
 type Props = {
-  content?: Testimonial;
+  content?: {
+    quote?: string;
+    author?: string;
+    jobTitle?: string;
+    imageUrl?: string;
+  };
 };
 
 export default function QuoteCard({ content }: Props) {
-  const logo = content?.logo;
+  const logo = content?.imageUrl;
   return (
     <div className="group hover:-translate-y-1 subtle-border flex h-full flex-col justify-between rounded-3xl bg-(--overlay-color) px-8 py-6 duration-300 hover:shadow-effect">
       <div>
@@ -27,13 +31,13 @@ export default function QuoteCard({ content }: Props) {
             {content?.jobTitle}
           </p>
         </div>
-        {logo?.url && logo.width && logo.height && logo.description && (
+        {logo && (
           <Image
-            className={`h-12 w-auto sm:h-14 dark:brightness-125 ${content?.logoInvert ? 'dark:invert' : ''}`}
-            src={logo.url}
-            alt={logo.description}
-            width={logo.width}
-            height={logo.height}
+            className={`h-12 w-auto sm:h-14 dark:brightness-125`}
+            src={logo}
+            alt="Logo"
+            width={100}
+            height={100}
           />
         )}
       </div>

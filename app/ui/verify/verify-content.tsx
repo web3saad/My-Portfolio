@@ -3,7 +3,6 @@
 import { CancelCircleIcon, CheckmarkCircle01Icon } from 'hugeicons-react';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import type { Verify } from '@/app/lib/contentful/generated/sdk';
 import RadialAnimation from '@/app/ui/animation/radial-animation';
 import SpringAnimation from '@/app/ui/animation/spring-animation';
 import ViewAnimation from '@/app/ui/animation/view-animation';
@@ -11,7 +10,13 @@ import MailLink from '@/app/ui/link/mail-link';
 import LoadingSpinner from '@/app/ui/loading/loading-spinner';
 
 type Props = {
-  content?: Verify;
+  content?: {
+    successTitle: string;
+    successDescription: string;
+    errorTitle: string;
+    errorDescription: string;
+    errorEmail: string;
+  };
 };
 
 export default function VerifyContent({ content }: Props) {

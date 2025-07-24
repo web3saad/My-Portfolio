@@ -4,7 +4,6 @@ import type {
   Path,
   UseFormRegister,
 } from 'react-hook-form';
-import type { ValidationMessages } from '@/app/lib/contentful/generated/sdk';
 import type { ValidationMessageKey } from '@/app/lib/schemas';
 
 type Props<T extends FieldValues> = {
@@ -13,7 +12,7 @@ type Props<T extends FieldValues> = {
   label: string;
   defaultValue?: string;
   errors: FieldErrors<T>;
-  validationMessages?: ValidationMessages | null;
+  validationMessages?: { [key: string]: string } | null;
 };
 
 export default function FormText<T extends FieldValues>({

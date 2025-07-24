@@ -5,7 +5,6 @@ import type {
   Path,
   UseFormRegister,
 } from 'react-hook-form';
-import type { ValidationMessages } from '@/app/lib/contentful/generated/sdk';
 import type { ValidationMessageKey } from '@/app/lib/schemas';
 import { Link } from '@/i18n/navigation';
 
@@ -19,7 +18,7 @@ type Props<T extends FieldValues> = {
   name: Path<T>;
   defaultChecked?: boolean;
   errors: FieldErrors<T>;
-  validationMessages?: ValidationMessages | null;
+  validationMessages?: { [key: string]: string } | null;
 };
 
 export default function FormGdprCheckbox<T extends FieldValues>({

@@ -1,6 +1,5 @@
 import type { FieldErrors, UseFormRegister } from 'react-hook-form';
 import type { SaveMessageStatus } from '@/app/lib/actions';
-import type { Form } from '@/app/lib/contentful/generated/sdk';
 import type { ContactFormData } from '@/app/lib/schemas';
 import SubmitButton from '@/app/ui/button/submit-button';
 import FormText from '@/app/ui/form/input/form-text';

@@ -4,7 +4,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useLocale } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import type { Form } from '@/app/lib/contentful/generated/sdk';
 import { type ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
 import FormErrorCard from '@/app/ui/form/card/form-error-card';

@@ -2,10 +2,7 @@ import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { NextIntlClientProvider } from 'next-intl';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Form } from '@/app/lib/contentful/generated/sdk';
-import nodemailerClient from '@/app/lib/nodemailer/client';
 import { type ContactFormData, ValidationMessages } from '@/app/lib/schemas';
-import supabaseClient from '@/app/lib/supabase/client';
 import ContactForm from '@/app/ui/form/contact-form';
 
 const FAIL_EMAIL = 'fail@test.com';
@@ -91,7 +88,7 @@ describe('ContactForm', () => {
     user = userEvent.setup();
     render(
       <NextIntlClientProvider locale="en">
-        <ContactForm content={content as Form} />
+        <ContactForm content={content} />
       </NextIntlClientProvider>,
     );
   });
@@ -141,7 +138,7 @@ describe('ContactForm', () => {
     await fillForm(validFormData);
     await user.click(screen.getByRole('button'));
 
-    const mockClient = supabaseClient();
+    const mockClient = mocks.supabaseClient();
     const mockInsert = mockClient.from('contacts').insert;
     expect(mockInsert).toHaveBeenNthCalledWith(1, supabaseData);
   });
@@ -157,7 +154,7 @@ describe('ContactForm', () => {
     await fillForm(validFormData);
     await user.click(screen.getByRole('button'));
 
-    const mockClient = nodemailerClient();
+    const mockClient = mocks.nodemailerClient();
     const mockSend = mockClient.sendMail;
     expect(mockSend).toHaveBeenCalledOnce();
 
@@ -179,7 +176,7 @@ describe('ContactForm', () => {
     await fillForm({ ...validFormData, email: FAIL_EMAIL });
     await user.click(screen.getByRole('button'));
 
-    const mockClient = supabaseClient();
+    const mockClient = mocks.supabaseClient();
     const mockInsert = mockClient.from('contacts').insert;
     expect(mockInsert).toHaveBeenCalledOnce();
 

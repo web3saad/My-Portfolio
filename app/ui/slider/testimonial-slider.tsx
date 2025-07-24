@@ -3,15 +3,15 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import { ArrowLeft01Icon, ArrowRight01Icon } from 'hugeicons-react';
 import { useCallback } from 'react';
-import type {
-  Testimonial,
-  Testimonials,
-} from '@/app/lib/contentful/generated/sdk';
 import StaggerAnimation from '@/app/ui/animation/stagger-animation';
 import QuoteCard from '@/app/ui/card/quote-card';
 
 type Props = {
-  content: Testimonials;
+  content: {
+    testimonialEntriesCollection?: {
+      items: Array<any>;
+    };
+  };
 };
 
 export default function TestimonialSlider({ content }: Props) {
@@ -75,7 +75,7 @@ export default function TestimonialSlider({ content }: Props) {
             .map((item, index) => (
               <QuoteCard
                 key={item.author}
-                content={item as Testimonial}
+                content={item}
                 aria-label={`${index + 1} / ${content?.testimonialEntriesCollection?.items.length}`}
               />
             ))}

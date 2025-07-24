@@ -7,7 +7,6 @@ import {
   SystemUpdate01Icon,
   WebDesign01Icon,
 } from 'hugeicons-react';
-import type { Service } from '@/app/lib/contentful/generated/sdk';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
