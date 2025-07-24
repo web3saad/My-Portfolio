@@ -41,10 +41,6 @@ vi.mock('@/i18n/navigation', () => ({
   Link: vi.fn(),
 }));
 
-vi.mock('@/app/lib/supabase/client', () => ({
-  default: mocks.supabaseClient,
-}));
-
 vi.mock('@/app/lib/nodemailer/client', () => ({
   default: mocks.nodemailerClient,
 }));

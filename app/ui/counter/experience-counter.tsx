@@ -8,9 +8,6 @@ import {
   useTransform,
 } from 'motion/react';
 import { useEffect, useRef } from 'react';
-// Remove: import type { Metric } from '@/app/lib/contentful/generated/sdk';
-// If needed, define Metric locally:
-// type Metric = { labelPrefix?: string; labelSuffix?: string; };
 import { getYearsSince } from '@/app/lib/date-utils';
 
 type Props = {

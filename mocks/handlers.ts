@@ -528,11 +528,6 @@ export const handlers = [
                 contactFormTitle: 'Contact Form and Email Inquiries',
                 contactFormIntro:
                   'Using the contact form and sending emails require the provision of personal data (e.g., name, email address, message). This data is only stored for the purpose of processing your inquiry and will not be shared without your consent.',
-                contactFormSupabase:
-                  'To process contact inquiries via the contact form, we use the database infrastructure of Supabase Inc., 970 Toa Payoh N, #07-04, Singapore. Data may be transferred to Singapore, and the data transfer to a third country (Singapore) is carried out based on the Standard Contractual Clauses of the EU in accordance with Art. 46 (2) (c) of the GDPR.',
-                contactFormSupabasePrivacyPolicy:
-                  'Detailed information about Supabase’s privacy practices can be found at:',
-                contactFormSupabasePrivacyPolicyLink: MOCK_URL,
                 legalBasisTitle: 'Legal Basis',
                 legalBasisList: [
                   'Art. 6 (1) (b) GDPR: For the performance of a contract or pre-contractual measures.',
