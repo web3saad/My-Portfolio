@@ -42,7 +42,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@graphql-codegen/cli": "^5.0.7",
-    "@graphql-codegen/introspection": "^4.0.3",
+    "@graphql-codegen/introspection": "^6.1.0",
     "@graphql-codegen/typescript-graphql-request": "^6.3.0",
     "@playwright/test": "^1.54.1",
     "@tailwindcss/postcss": "^4.1.11",
