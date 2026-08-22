@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant hover (&:hover);
+
+@theme {
+  --animate-spin-slow: spin 8s linear infinite;
+  --animate-shine: shine 9s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    1% {
+      left: -100%;
+      opacity: 1;
+    }
+    15% {
+      left: 100%;
+      opacity: 1;
+    }
+    16% {
+      opacity: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(0.75rem) translateY(0.75rem);
+    }
+  }
+}
+
+:root {
+  --highlight: var(--color-orange-600);
+  --highlight-link: oklch(58% 0.2 34);
+  --radial-color: oklch(75% 0.4 33 / 20%);
+  --primary: var(--color-black);
+  --secondary: var(--color-neutral-700);
+  --background-color: var(--color-neutral-50);
+  --surface-color: var(--color-white);
+  --overlay-color: --alpha(var(--color-white) / 80%);
+  --border-color: --alpha(var(--color-black) / 20%);
+  --subtle-border-color: var(--color-neutral-300);
+  --grid-color: --alpha(var(--color-neutral-300) / 70%);
+  --hover-color: --alpha(var(--color-neutral-700) / 10%);
+  --error-color: var(--color-rose-600);
+}
+
+html.dark {
+  --highlight: oklch(67% 0.22 38);
+  --highlight-link: oklch(64% 0.22 38);
+  --radial-color: oklch(36% 0.25 33 / 60%);
+  --primary: var(--color-white);
+  --secondary: var(--color-neutral-300);
+  --background-color: var(--color-neutral-950);
+  --surface-color: var(--color-neutral-900);
+  --overlay-color: --alpha(var(--color-neutral-900) / 70%);
+  --border-color: --alpha(var(--color-white) / 35%);
+  --subtle-border-color: var(--color-neutral-700);
+  --grid-color: --alpha(var(--color-neutral-700) / 40%);
+  --hover-color: --alpha(var(--color-neutral-200) / 20%);
+  --error-color: var(--color-rose-600);
+}
+
+* {
+  outline-color: oklch(70% 0.18 50);
+}
+
+::selection {
+  background-color: oklch(70% 0.18 50 / 50%);
+}
+
+body {
+  color: var(--primary);
+  background-color: var(--background-color);
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl leading-tight font-bold md:text-5xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-3xl font-bold md:text-4xl lg:text-6xl;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold md:text-3xl lg:text-5xl;
+  }
+
+  h4 {
+    @apply text-xl font-semibold md:text-2xl lg:text-3xl;
+  }
+
+  h5 {
+    @apply text-lg font-semibold md:text-xl lg:text-2xl;
+  }
+
+  h6 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@utility base-border {
+  @apply border border-(--border-color);
+}
+
+@utility subtle-border {
+  @apply border border-(--subtle-border-color);
+}
+
+@utility hover-effect {
+  @apply cursor-pointer transition-colors duration-300 hover:bg-(--hover-color) disabled:cursor-default disabled:bg-(--transparent) disabled:opacity-60;
+}
+
+@utility underline-effect {
+  @apply relative inline-block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:duration-300 hover:after:w-full;
+}
+
+@utility shadow-effect {
+  @apply shadow-[0_4px_6px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_6px_rgba(255,255,255,0.1)];
+}
+
+@utility glow-effect {
+  @apply drop-shadow-[0_0_1px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_0_1px_rgba(255,255,255,0.3)];
+}
+
+@utility glass-effect {
+  @apply -translate-1/2 subtle-border absolute isolate select-none shadow-[inset_0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_0_15px_rgba(255,255,255,0.18)];
+}
